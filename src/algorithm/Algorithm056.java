@@ -27,11 +27,14 @@ public class Algorithm056 {
             arrList.add(i);
         }
         arrList.sort((o1, o2) -> o2 - o1);  // 내림 차순으로 정렬
-        for (int i = 0; i < arrList.size() - m; i += m) {
-//            System.out.println(m + " * arrList.get(" + (m + m - 1) + ") = " + m * arrList.get(i + m - 1));
+        for (int i = 0; i < arrList.size(); i += m) {
+            if (i + m - 1 >= arrList.size()) {
+                break;
+            }
+            System.out.println(m + " * arrList.get(" + (m + m - 1) + ") = " + m * arrList.get(i + m - 1));
 
             answer += m * arrList.get(i + m - 1);
-//            System.out.println("현재까지 answer : " + answer);
+            System.out.println("현재까지 answer : " + answer);
         }
 
         System.out.println("최종 answer : " + answer);
