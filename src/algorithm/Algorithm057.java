@@ -20,33 +20,22 @@ public class Algorithm057 {
     public static void main(String[] args) {
         int[] answer = {};
 
-        int[] answers = {1, 3, 2, 4, 2};
+        int[] answers = {1, 2, 3, 4, 5};
 
-        int[] giveUp1 = {1, 2, 3, 4, 5};
-        int[] giveUp2 = {2, 1, 2, 3, 2, 4, 2, 5};
-        int[] giveUp3 = {3, 3, 1, 1, 2, 2, 4, 4, 5, 5};
-        int[] giveUpIndex = {0, 0, 0};
+        int[][] giveUpPattern = {
+                {1, 2, 3, 4, 5},
+                {2, 1, 2, 3, 2, 4, 2, 5},
+                {3, 3, 1, 1, 2, 2, 4, 4, 5, 5}
+        };
         List<Integer> score = new ArrayList<>(Arrays.asList(0, 0, 0));
-        int maxScore = 0;
 
         for (int i = 0; i < answers.length; i++) {
-            giveUpIndex[0] = i % giveUp1.length;
-            giveUpIndex[1] = i % giveUp2.length;
-            giveUpIndex[2] = i % giveUp3.length;
-
-            if (answers[i] == giveUp1[giveUpIndex[0]]) {
-                score.set(0, score.get(0) + 1);
-                maxScore = Math.max(maxScore, score.get(0));
-            }
-            if (answers[i] == giveUp2[giveUpIndex[1]]) {
-                score.set(1, score.get(1) + 1);
-                maxScore = Math.max(maxScore, score.get(1));
-            }
-            if (answers[i] == giveUp3[giveUpIndex[2]]) {
-                score.set(2, score.get(2) + 1);
-                maxScore = Math.max(maxScore, score.get(2));
-            }
+            if (answers[i] == giveUpPattern[0][i % giveUpPattern[0].length]) score.set(0, score.get(0) + 1);
+            if (answers[i] == giveUpPattern[1][i % giveUpPattern[1].length]) score.set(1, score.get(1) + 1);
+            if (answers[i] == giveUpPattern[2][i % giveUpPattern[2].length]) score.set(2, score.get(2) + 1);
         }
+
+        int maxScore = Collections.max(score);
 
         List<Integer> answerList = new ArrayList<>();
         for (int i = 0; i < score.size(); i++) {
