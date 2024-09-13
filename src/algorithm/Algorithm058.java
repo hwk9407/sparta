@@ -12,7 +12,7 @@ public class Algorithm058 {
      * 소수 판별
      * 에라토스테네스의 체 이용하기
      * 2부터 N까지 나열한다.
-     * N
+     *
      */
     public static void main(String[] args) {
         int[] nums = {3, 40, 100};
