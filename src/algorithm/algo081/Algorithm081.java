@@ -1,16 +1,16 @@
 package algorithm.algo081;
 class Solution {
     public int solution(int[] arr) {
-        int gcd = arr[0];
+        int lcm = arr[0];
         for (int num : arr) {
-            int lcm = getLcm(gcd, num);
-            gcd = (gcd * num) / lcm;
+            int gcd = getGcd(lcm, num);
+            lcm = (lcm * num) / gcd;
         }
 
-        return gcd;
+        return lcm;
     }
 
-    private int getLcm(int a, int b) {
+    private int getGcd(int a, int b) {
         int bigNum = Math.max(a, b);
         int smallNum = Math.min(a, b);
 
@@ -19,7 +19,7 @@ class Solution {
             return smallNum;
         }
 
-        return getLcm(smallNum, rest);
+        return getGcd(smallNum, rest);
     }
 }
 public class Algorithm081 {
