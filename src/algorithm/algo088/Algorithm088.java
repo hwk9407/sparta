@@ -21,8 +21,8 @@ class Solution {
 
 public class Algorithm088 {
     /**
-     * 행렬의   곱셈
-     * 2차원    행렬 arr1과 arr2를 입력받아, arr1에 arr2를 곱한 결과를 반환하라
+     * 행렬의 곱셈
+     * 2차원 행렬 arr1과 arr2를 입력받아, arr1에 arr2를 곱한 결과를 반환하라
      *
      * [제한 조건]
      * 행렬 arr1, arr2의 행과 열의 길이는 2 이상 100 이하
