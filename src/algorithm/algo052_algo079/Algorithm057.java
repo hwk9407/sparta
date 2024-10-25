@@ -1,4 +1,4 @@
-package algorithm;
+package algorithm.algo052_algo079;
 
 
 import java.util.ArrayList;

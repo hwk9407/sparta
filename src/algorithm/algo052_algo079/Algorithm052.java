@@ -1,4 +1,4 @@
-package algorithm;
+package algorithm.algo052_algo079;
 
 public class Algorithm052 {
     public static void main(String[] args) {
