@@ -43,7 +43,7 @@ class Solution {
 }
 
 public class Algorithm092 {
-    // 프로세스1
+    // 프로세스2
     public static void main(String[] args) {
 
         Solution solution = new Solution();
